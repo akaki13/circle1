@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System.Threading;
 public class movement : MonoBehaviour
 {
    
@@ -40,11 +40,11 @@ public class movement : MonoBehaviour
         {
             efect.SetActive(true);
         }
-        else
-        { 
-            
-            efect.SetActive(false);
-        }
+        else if (player == transform.position && playerp.Count == 0)
+            {
+                efect.SetActive(false);
+            }
+      
     }
     public void speedchange(float newspeed)
     {
